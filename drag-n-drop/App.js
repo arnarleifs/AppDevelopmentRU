@@ -1,21 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import images from './static/images';
 import { StyleSheet, Text, View } from 'react-native';
+import DraggableImage from './src/components/DraggableImage';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const App = () => (
+  <View style={styles.container}>
+    {images.map(({ name, src }) => <DraggableImage key={name} src={src} />)}
+  </View>
+)
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    backgroundColor: 'lightskyblue',
     alignItems: 'center',
-    justifyContent: 'center',
-  },
+    justifyContent: 'center'
+  }
 });
+
+export default App;
