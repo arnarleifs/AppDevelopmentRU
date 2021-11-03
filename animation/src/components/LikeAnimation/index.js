@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import LikeImage from '../../resources/like-float.png';
 
 const LikeAnimation = () => {
     // The initial position of the like floating icon
-    const [position] = useState(new Animated.Value(0));
+    const position = useRef(new Animated.Value(0)).current;
     // The initial opacity of the like floating icon
-    const [opacity] = useState(new Animated.Value(0));
+    const opacity = useRef(new Animated.Value(0)).current;
     // The initial scale of the like floating icon
-    const [scale] = useState(new Animated.Value(1));
+    const scale = useRef(new Animated.Value(1)).current;
 
     useEffect(() => {
         Animated.sequence([
