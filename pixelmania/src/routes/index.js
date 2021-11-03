@@ -7,12 +7,14 @@ import Main from '../views/Main';
 import Gallery from '../views/Gallery';
 import Preview from '../views/Preview';
 
-export default (
+const Routes = () => (
     <NavigationContainer>
-        <Stack.Navigator>
+        <Stack.Navigator initialRouteName="Main">
             <Stack.Screen name="Main" component={Main} />
             <Stack.Screen name="Gallery" component={Gallery} />
             <Stack.Screen name="Preview" component={Preview} />
         </Stack.Navigator>
     </NavigationContainer>
-)
+);
+
+export default Routes;

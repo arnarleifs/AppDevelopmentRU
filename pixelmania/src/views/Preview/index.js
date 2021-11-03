@@ -4,13 +4,15 @@ import { loadImage } from '../../services/fileService';
 import styles from './styles';
 import Spinner from '../../components/Spinner';
 
-const Preview = ({ navigation }) => {
+const Preview = ({ route }) => {
     const [currentImage, setCurrentImage] = useState('');
     const [loadingImage, setLoadingImage] = useState(true);
 
+    const { fileName } = route.params;
+
     useEffect(() => {
         (async () => {
-            const currentImage = await loadImage(navigation.getParam('fileName', ''));
+            const currentImage = await loadImage(fileName);
             setCurrentImage(currentImage);
             setLoadingImage(false);
         })();

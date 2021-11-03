@@ -101,7 +101,7 @@ const Gallery = () => {
             }
             <AddModal
                 isOpen={isAddModalOpen}
-                closeModal={() => isAddModalOpen(false)}
+                closeModal={() => setIsAddModalOpen(false)}
                 takePhoto={() => takePhoto()}
                 selectFromCameraRoll={() => selectFromCameraRoll()} />
         </View>
